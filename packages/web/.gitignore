@@ -12,8 +12,6 @@ dist
 dist-ssr
 *.local
 
-srcbook-api-*.tgz
-
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -24,23 +22,4 @@ srcbook-api-*.tgz
 *.njsproj
 *.sln
 *.sw?
-
-*.gitignored.*
-
-packages/api/.env
-packages/api/*.local
-
-srcbook/public/**/*
-!srcbook/public/.gitkeep
-
-srcbook/lib/**/*
-!srcbook/lib/.gitkeep
-
-# turbo
-**/.turbo
-
-# Aide
-*.code-workspace
-
-vite.config.ts.timestamp-*.mjs
 .vercel

@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "buildCommand": "cd packages/web && pnpm install && pnpm run build",
+  "outputDirectory": "packages/web/dist",
+  "installCommand": "npm i -g pnpm",
+  "framework": "vite"
+}
