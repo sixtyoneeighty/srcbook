@@ -138,7 +138,7 @@ ${query}
   return prompt;
 };
 
-type NoToolsGenerateTextResult = GenerateTextResult<{}>;
+type NoToolsGenerateTextResult = GenerateTextResult<{}, string>;
 /*
  * Given a user request, which is free form text describing their intent,
  * generate a srcbook using an LLM.

@@ -1,4 +1,4 @@
-import simpleGit, { SimpleGit, DefaultLogFields, ListLogLine } from 'simple-git';
+import { simpleGit, SimpleGit, DefaultLogFields, ListLogLine } from 'simple-git';
 import fs from 'node:fs/promises';
 import { broadcastFileUpdated, pathToApp, toFileType } from './disk.mjs';
 import type { App as DBAppType } from '../db/schema.mjs';
@@ -7,7 +7,7 @@ import Path from 'node:path';
 // Helper to get git instance for an app
 function getGit(app: DBAppType): SimpleGit {
   const dir = pathToApp(app.externalId);
-  return simpleGit(dir);
+  return simpleGit({ baseDir: dir });
 }
 
 // Initialize a git repository in the app directory

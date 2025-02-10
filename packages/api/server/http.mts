@@ -397,7 +397,7 @@ router.get('/npm/search', cors(), async (req, res) => {
   if (!response.ok) {
     return res.json({ error: true, result: [] });
   }
-  const packages = await response.json();
+  const packages = await response.json() as { objects: NpmSearchResult[] };
   const results = packages.objects.map((o: NpmSearchResult) => {
     return { name: o.package.name, version: o.package.version, description: o.package.description };
   });
