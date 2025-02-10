@@ -5,6 +5,7 @@ WORKDIR /app
 # Copy root package files
 COPY package.json pnpm-workspace.yaml ./
 COPY packages/components/package.json ./packages/components/
+COPY packages/configs/package.json ./packages/configs/
 COPY packages/shared/package.json ./packages/shared/
 COPY packages/web/package.json ./packages/web/
 
@@ -14,12 +15,13 @@ RUN npm install -g pnpm && \
 
 # Copy source code
 COPY packages/components ./packages/components
+COPY packages/configs ./packages/configs
 COPY packages/shared ./packages/shared
 COPY packages/web ./packages/web
 
 # Build dependencies
-RUN cd packages/components && pnpm run build && \
-    cd ../shared && pnpm run build
+RUN cd packages/shared && pnpm run build && \
+    cd ../components && pnpm run build
 
 # Build web
 WORKDIR /app/packages/web
